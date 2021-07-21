@@ -4,11 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/Home';
 import firebase from 'firebase/app'
 import { NavigationContainer } from '@react-navigation/native';
-
+import 'react-native-gesture-handler';
 import {Provider} from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './redux/reducers';
 import thunk from 'redux-thunk';
+import { AntDesign } from '@expo/vector-icons'; 
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
@@ -17,6 +18,7 @@ import SavedRecipe from './screens/SavedRecipe';
 import Kitchen from './screens/Kitchen';
 import Profile from './screens/Profile';
 import Register from './screens/Register';
+import Login from './screens/Login';
 
 import { useFonts, BigShouldersDisplay_700Bold } from '@expo-google-fonts/big-shoulders-display';
 import { Roboto_700Bold } from '@expo-google-fonts/roboto';
@@ -92,10 +94,14 @@ export class App extends Component {
             <Stack.Navigator initialRouteName="Home">
               <Stack.Screen name="Home" component={Home} options={{ headerShown: false}} />
               <Stack.Screen name="Register" component={Register} 
-                      options = {{ 
-                         headerShown:false
-                        
-              }}/>
+                            options = {{ 
+                            headerBackTitleVisible: false, 
+                            headerTintColor: 'black',
+                            headerTransparent: true, 
+                            headerTitle: '',
+                            }}/>
+              <Stack.Screen name="Login" component= {Login} 
+              />
             </Stack.Navigator>
           </NavigationContainer>
     )
@@ -116,6 +122,15 @@ export class App extends Component {
       )
   }
 }
+
+const styles = StyleSheet.create({
+  backButton: {
+    justifyContent: 'flex-start',
+    marginTop: 30,
+    marginLeft: 10
+  },
+
+})
 
 export default App
 

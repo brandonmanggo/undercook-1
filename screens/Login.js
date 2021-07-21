@@ -9,7 +9,7 @@ import {
 import firebase from 'firebase';
 import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 
-export class Register extends Component {
+export class Login extends Component {
     constructor(props) { 
         super(props);
 
@@ -17,7 +17,7 @@ export class Register extends Component {
             email: '',
             password:''
         }
-        this.onSignUp = this.onSignUp.bind(this);
+        this.onSignIn = this.onSignIn.bind(this);
     }
 
     onSignIn(){
