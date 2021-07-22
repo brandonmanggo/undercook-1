@@ -87,8 +87,6 @@ export class Register extends Component {
                         />
                         
                     </TouchableOpacity>
-                
-
             </View>
             <View style={styles.image}>
                 <Image
@@ -99,17 +97,7 @@ export class Register extends Component {
         )
     }
 }
-const EmailInput = () => {
-    const [text, setText] = React.useState('');
-  
-    return (
-      <TextInput
-        label="Email"
-        value={text}
-        onChangeText={text => setText(text)}
-      />
-    );
-  };
+
 const styles = StyleSheet.create({
     container1: {
         flexDirection: 'column',

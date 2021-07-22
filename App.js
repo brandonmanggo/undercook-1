@@ -100,8 +100,12 @@ export class App extends Component {
                             headerTransparent: true, 
                             headerTitle: '',
                             }}/>
-              <Stack.Screen name="Login" component= {Login} 
-              />
+              <Stack.Screen name="Login" component= {Login} options = {{ 
+                            headerBackTitleVisible: false, 
+                            headerTintColor: 'black',
+                            headerTransparent: true, 
+                            headerTitle: '',
+                            }}/> 
             </Stack.Navigator>
           </NavigationContainer>
     )
